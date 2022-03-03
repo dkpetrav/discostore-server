@@ -63,8 +63,10 @@ module.exports = (app) => {
   //   })
   // );
 
-  app.use((req, res, next) => {
-    req.user = req.session.user || null;
-    next();
-  });
+
+  // makes errors when testing on postman
+  // app.use((req, res, next) => {
+  //   req.user = req.session.user || null;
+  //   next();
+  // });
 };

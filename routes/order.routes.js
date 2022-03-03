@@ -4,12 +4,12 @@ const router = require('express').Router()
 
 const mongoose = require('mongoose')
 
-const Project = require('../models/Album.model')
+const Album = require('../models/Album.model')
+const Order = require('../models/Order.model')
 
 //  POST /api/orders  -  Creates a new order
 router.post('/orders', (req, res, next) => {
   const {
-    customerId,
     username,
     street,
     streetNumber,
@@ -20,8 +20,7 @@ router.post('/orders', (req, res, next) => {
     quantity,
   } = req.body
 
-  Album.create({
-    customerId,
+  Order.create({
     username,
     street,
     streetNumber,
