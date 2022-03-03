@@ -14,4 +14,4 @@ const albumSchema = new Schema(
   },
 )
 
-module.exports = model('Album', userSchema)
+module.exports = model('Album', albumSchema);
