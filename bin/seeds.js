@@ -17,20 +17,46 @@ mongoose.connect(MONGO_URI, {
 
 const albums = [
   {
-    title: 'The Hunger Games',
-    artist:
-      'The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the voice of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America. The Capitol, a highly advanced metropolis, exercises political control over the rest of the nation. The Hunger Games is an annual event in which one boy and one girl aged 12–18 from each of the twelve districts surrounding the Capitol are selected by lottery to compete in a televised battle royale to the death.',
-    genre: 'Suzanne Collins',
+    title: 'Zenyatta Mondatta',
+    artist: 'The Police',
+    genre: 'Rock',
     price: 10,
-    imageURL: 'HTMLOptionsCollection',
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646308503/discostore/IMG_0729_brqvgo.jpg',
   },
   {
-    title: 'The Hunger Games',
-    artist:
-      'The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the voice of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America. The Capitol, a highly advanced metropolis, exercises political control over the rest of the nation. The Hunger Games is an annual event in which one boy and one girl aged 12–18 from each of the twelve districts surrounding the Capitol are selected by lottery to compete in a televised battle royale to the death.',
-    genre: 'Suzanne Collins',
+    title: 'October',
+    artist:'U2',
+    genre: 'Rock',
     price: 10,
-    imageURL: 'HTMLOptionsCollection',
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646308496/discostore/IMG_0721_xq4kl5.jpg',
+  },
+  {
+    title: 'New York',
+    artist:'Lou Reed',
+    genre: 'Rock',
+    price: 10,
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646308956/discostore/IMG_0736_lct4gl.jpg',
+  },
+  {
+    title: 'The Geto Boys',
+    artist:'The Geto Boys',
+    genre: 'Hip Hop',
+    price: 10,
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646308982/discostore/IMG_0790_c983hx.jpg',
+  },
+  {
+    title: 'Black Rose',
+    artist:'Thin Lizzy',
+    genre: 'Rock',
+    price: 10,
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646309014/discostore/IMG_0765_bf9c3h.jpg',
+  },
+  {
+    title: "Steamin' hot",
+    artist:'Kenn Lending Blues Band',
+    genre: 'Blues',
+    price: 10,
+    imageURL: 'https://res.cloudinary.com/dvivdztwv/image/upload/v1646309283/discostore/IMG_0798_ce94cj.jpg',
   },
 ]
 
