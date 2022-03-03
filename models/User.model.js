@@ -1,20 +1,19 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose')
+const { Schema, model } = mongoose
 
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema(
   {
-    username: {
-      type: String,
-      // unique: true -> Ideally, should be unique, but its up to you
-    },
+    username: { type: String },
     password: String,
+    street: { type: String, required: true },
+    streetNumber: { type: Number, required: true },
+    city: { type: String, required: true },
+    zipCode: { type: String, required: true },
+    country: { type: String },
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
-  }
-);
+  },
+)
 
-const User = model("User", userSchema);
-
-module.exports = User;
+module.exports = User
