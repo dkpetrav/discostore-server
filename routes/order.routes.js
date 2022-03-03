@@ -34,43 +34,47 @@ router.post('/orders', (req, res, next) => {
     .catch((err) => res.json(err))
 })
 
-//  GET /api/albums/:albumId -  Retrieves a specific album by id
-router.get('/albums/:albumId', (req, res, next) => {
-  const { albumId } = req.params
+//  GET /api/orders/:orderId -  Retrieves a specific order by id
+router.get('/orders/:orderId', (req, res, next) => {
+  const { orderId } = req.params
 
-  if (!mongoose.Types.ObjectId.isValid(albumId)) {
+  if (!mongoose.Types.ObjectId.isValid(orderId)) {
     res.status(400).json({ message: 'Specified id is not valid' })
     return
   }
+  Order.findById(orderId)
+    .then(order => res.status(200).json(order))
+    .catch(error => res.json(error));
+
 })
 
-// PUT  /api/albums/:albumId  -  Updates a specific album by id
-router.put('/albums/:albumId', (req, res, next) => {
-  const { albumId } = req.params
+// PUT  /api/orders/:orderId  -  Updates a specific order by id
+router.put('/orders/:orderId', (req, res, next) => {
+  const { orderId } = req.params
 
-  if (!mongoose.Types.ObjectId.isValid(albumId)) {
+  if (!mongoose.Types.ObjectId.isValid(orderId)) {
     res.status(400).json({ message: 'Specified id is not valid' })
     return
   }
 
-  Album.findByIdAndUpdate(albumId, req.body, { new: true })
-    .then((updatedAlbum) => res.json(updatedAlbum))
+  Order.findByIdAndUpdate(orderId, req.body, { new: true })
+    .then((updatedOrder) => res.json(updatedOrder))
     .catch((error) => res.json(error))
 })
 
-// DELETE  /api/albums/:albumId  -  Deletes a specific album by id
-router.delete('/albums/:albumId', (req, res, next) => {
-  const { albumId } = req.params
+// DELETE  /api/orders/:orderId  -  Deletes a specific order by id
+router.delete('/orders/:orderId', (req, res, next) => {
+  const { orderId } = req.params
 
-  if (!mongoose.Types.ObjectId.isValid(albumId)) {
+  if (!mongoose.Types.ObjectId.isValid(orderId)) {
     res.status(400).json({ message: 'Specified id is not valid' })
     return
   }
 
-  Album.findByIdAndRemove(albumId)
+  Order.findByIdAndRemove(orderId)
     .then(() =>
       res.json({
-        message: `Album with ${albumId} is removed successfully.`,
+        message: `Order with ${orderId} is removed successfully.`,
       }),
     )
     .catch((error) => res.json(error))
