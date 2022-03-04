@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Album = require('../models/Album.model')
 
 const MONGO_URI =
-  process.env.MONGODB_URI || 'mongodb://localhost/library-project'
+  process.env.MONGODB_URI || 'mongodb://localhost/discostore-server'
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
