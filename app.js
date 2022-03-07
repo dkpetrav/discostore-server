@@ -20,7 +20,7 @@ const allRoutes = require('./routes/index.routes')
 app.use('/api', allRoutes)
 
 const authRouter = require('./routes/auth.routes')
-app.use('/api', authRouter)
+app.use('/auth', authRouter)
 
 const albumRouter = require('./routes/album.routes')
 app.use('/api', albumRouter)

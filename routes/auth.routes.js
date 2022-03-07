@@ -1,8 +1,13 @@
-const router = require("express").Router();
+//const router = require("express").Router();
+
+const express = require("express");
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+
+const router = express.Router();
 
 // How many rounds should bcrypt run the salt (default [10 - 12 rounds])
 const saltRounds = 10;
@@ -19,7 +24,8 @@ router.get("/loggedin", (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, email } = req.body;
+  //const { username, password } = req.body;
 
   if (!username) {
     return res
