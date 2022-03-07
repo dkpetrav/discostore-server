@@ -11,6 +11,7 @@ const Order = require('../models/Order.model')
 router.post('/user', (req, res, next) => {
   const {
     username,
+    email,
     street,
     streetNumber,
     city,
@@ -20,6 +21,7 @@ router.post('/user', (req, res, next) => {
 
   User.create({
     username,
+    email,
     street,
     streetNumber,
     city,
