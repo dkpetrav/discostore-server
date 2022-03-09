@@ -11,7 +11,7 @@ const orderSchema = new Schema(
     zipCode: { type: String, required: true },
     country: { type: String },
     //orderItem(s):
-    albumId: { type: String },
+    albumId: Schema.Types.ObjectId,
     quantity: { type: Number },
   },
   {
