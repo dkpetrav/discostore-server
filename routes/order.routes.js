@@ -1,4 +1,4 @@
-// routes/album.routes.js
+// routes/order.routes.js
 
 const router = require('express').Router()
 
@@ -79,5 +79,14 @@ router.delete('/orders/:orderId', (req, res, next) => {
     )
     .catch((error) => res.json(error))
 })
+
+
+// GET /api/orders  -  Get all orders
+router.get("/orders", (req, res, next) => {
+  Order.find()
+    .then((allOrders) => res.json(allOrders))
+    .catch((err) => res.json(err));
+});
+
 
 module.exports = router
